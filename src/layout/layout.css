@@ -1,0 +1,8 @@
+.leftbar a.active {
+  color: #04787b;
+  text-decoration: none;
+}
+
+.leftbar a {
+  color: #575757;
+}

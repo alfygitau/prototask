@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Laboratory from "./pages/laboratory/Laboratory";
+import Patients from "./pages/patients/Patients";
+import Messages from "./pages/messages/Messages";
+import Pharmacy from "./pages/pharmacy/Pharmacy";
+import Schedule from "./pages/schedule/Schedule";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="/laboratory" element={<Laboratory />} />
+          <Route path="/patients" element={<Patients />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/pharmacy" element={<Pharmacy />} />
+          <Route path="/schedule" element={<Schedule />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 
